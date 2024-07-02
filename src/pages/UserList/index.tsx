@@ -1,12 +1,8 @@
-// import React from 'react';
+import React from 'react';
+import UserListView from './UserListView';
 
-function UserList(){
-    return(
-        <div>
-             <h1>User List</h1>
-            
-        </div>
-    )
-}
+const UserListPage: React.FC = () => {
+  return <UserListView />;
+};
 
-export default UserList;
+export default UserListPage;
