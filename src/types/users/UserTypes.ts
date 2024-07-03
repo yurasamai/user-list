@@ -10,9 +10,9 @@ export enum Gender {
   }
 
   export interface User {
-    id: string;
+    id?: string;
     name: string;
     email: string;
-    gender: Gender;
-    status: Status;
+    gender: Gender | string;
+    status?: Status | string;
   }

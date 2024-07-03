@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'; 
 import { User } from '@/types/users/UserTypes'; 
 import { RootState } from '@/redux/store';
-import { fetchUsers } from '@/services/users/UserListServices';
+import { fetchUsers, createUser } from '@/services/users/UserListServices';
 
  export interface UserList {
     users: User[];
@@ -25,6 +25,14 @@ export const fetchUsersAsync = createAsyncThunk(
     }
   );
 
+  // Create user
+export const createUserAsync = createAsyncThunk(
+  'users/createUser',
+  async (newUser: User) => {
+     const response = await createUser(newUser); 
+     return response; 
+  }
+);
   // Slice
 export const userSlice = createSlice({
     name: 'users',

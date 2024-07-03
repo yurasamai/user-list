@@ -1,8 +1,12 @@
 import React from 'react';
 import './styles.scss';
 
-const CreateUserButton: React.FC = () => {
-  return <button className="btn">Nuevo Usuario</button>;
+interface ButtonProps {
+  onCreateUser: () => void;
+}
+
+const CreateUserButton: React.FC<ButtonProps> = ({ onCreateUser }) => {
+  return <button className="btn" onClick={onCreateUser}>Nuevo Usuario</button>;
 };
 
 export default CreateUserButton;
