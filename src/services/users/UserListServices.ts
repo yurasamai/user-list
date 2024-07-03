@@ -21,3 +21,13 @@ export const createUser = async (newUser: User): Promise<User> => {
     throw new Error(`Error on: Create user: ${error.message}`);
   }
 };
+
+// Fetch user by id
+export const fetchUsersById = async (userId: string): Promise<any> => {
+  try {
+    const response = await UserListApiGateWay.get(`/public/v2/users/${userId}`);
+    return response.data;
+  } catch (error: any) {
+    throw new Error(`Error on: Fetch users: ${error.message}`);
+  }
+};

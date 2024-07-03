@@ -1,0 +1,16 @@
+.modal-position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media (max-width: 500px) {
+        width: 90vw;
+        transform: translate(-50%, -50%);
+    }
+
+    @media (min-width: 501px) {
+        width: 500px;
+        transform: translate(-50%, -50%);
+    }
+}

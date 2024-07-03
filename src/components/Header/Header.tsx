@@ -18,8 +18,8 @@ interface HeaderProps {
     return (
         <div className='header w-full p-8 flex gap-6 shadow-md mb-8 bg-white rounded-b-lg'>
         {showHomeButton && 
-        <div className="relative group">
-        <div className="text-primary-dark flex justify-center items-center cursor-pointer group-hover:scale-150 group-hover:text-primary-blue transition-all duration-500 ease-in-out" 
+        <div className="relative group flex justify-center items-center">
+        <div className="text-primary-dark  cursor-pointer group-hover:scale-150 group-hover:text-primary-blue transition-all duration-500 ease-in-out" 
              onClick={handleBack}>
           <ArrowBackIcon />
         </div>
