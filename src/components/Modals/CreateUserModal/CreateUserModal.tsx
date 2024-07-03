@@ -3,6 +3,7 @@ import { Gender, Status } from '@/types/users/UserTypes';
 import { UseCreateUser } from './utils';
 import { useAppDispatch } from '@/redux/store';
 import ClearIcon from '@mui/icons-material/Clear';
+import './styles.scss'
 
 
 interface ModalProps {
@@ -13,7 +14,7 @@ interface ModalProps {
 const CreateUserModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   // Modal styles
   const backdropStyle = isOpen ? "fixed top-0 left-0 w-full h-full bg-black opacity-50 z-50" : "hidden";
-  const modalStyle = isOpen ? "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-lg p-8 px-10 z-50" : "hidden";
+  const modalStyle = isOpen ? "modal-position fixed top-1/2 left-1/2 bg-white shadow-lg rounded-lg p-8 px-10 z-50 md:w-90 lg:w-96 sm:min-w-95vw" : "hidden";
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
