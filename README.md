@@ -35,17 +35,17 @@ Getting Started
 To get started with this project, follow these steps:
 
 1. Clone the repository:
-2. 
+   
     git clone https://github.com/yurasamai/user-list.git
    
     cd user-list
    
 4. Install dependencies:
-5. 
+   
     npm install
 
 6. Run the development server:
-7. 
+   
     npm run dev
 
 Usage
@@ -68,13 +68,13 @@ The components are designed to be reusable and follow modern React practices usi
 
 Additional Notes
 
-The project uses Vite for fast development and building.
+  The project uses Vite for fast development and building.
 
-Tailwind CSS is used for utility-first styling, and SASS is used for additional custom styles.
+  Tailwind CSS is used for utility-first styling, and SASS is used for additional custom styles.
 
-State management is handled using Redux Toolkit for a simplified approach to managing global state.
+  State management is handled using Redux Toolkit for a simplified approach to managing global state.
 
-Routing is handled using React Router.
+  Routing is handled using React Router.
 
 
 
