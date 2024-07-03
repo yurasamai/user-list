@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Gender, Status } from '@/types/users/UserTypes';
 import { useAppDispatch } from '@/redux/store';
 import { UseEditUser, UseGetUserById } from './utils';
@@ -15,6 +16,7 @@ const EditUserForm: React.FC<EditFormProps> = ({ userId }) => {
     const [status, setStatus] = useState<Status | ''>('');
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     const handleEdit = () => {
         const errors: { [key: string]: string } = {};
@@ -43,6 +45,8 @@ const EditUserForm: React.FC<EditFormProps> = ({ userId }) => {
                 status
             }
             UseEditUser(dispatch, userId, user);
+            alert('Usuario guardado exitosamente');
+            navigate('/');
         } else {
             setErrors(errors);
         }
