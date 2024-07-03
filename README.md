@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+User List Application
+This is a User List application built with modern web development technologies. It provides a list of users with options to crate, view, edit, and delete user information.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Table of Contents
+  -Technologies Used
+  -Getting Started
+  -Usage
 
-Currently, two official plugins are available:
+Technologies Used
+  React: A JavaScript library for building user interfaces.
+  TypeScript: A superset of JavaScript that adds static typing.
+  Vite: A build tool that provides a faster and leaner development experience for modern web projects.
+  Material Icons: A set of icons from Google for use in web projects.
+  React Router: A standard library for routing in React.
+  Redux: A predictable state container for JavaScript apps.
+  Axios: A promise-based HTTP client for making requests to the API.
+  Tailwind CSS: A utility-first CSS framework for rapidly building custom designs.
+  SASS: A preprocessor scripting language that is interpreted or compiled into CSS.
+  
+Getting Started
+To get started with this project, follow these steps:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository:
+    git clone https://github.com/yurasamai/user-list.git
+    cd user-list
+   
+2. Install dependencies:
+    npm install
 
-## Expanding the ESLint configuration
+3. Run the development server:
+    npm run dev
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Usage
+The application consists of a main view displaying a list of users. Each row in the user list provides options to view, edit, or delete the user. The buttons are styled using Tailwind CSS and some additional custom styles using SASS.
 
-- Configure the top-level `parserOptions` property like this:
+Features
+  User List: Table of avaliable users
+  Create User: Creates a new user
+  View User: Navigates to User Detail View with the information of the selecter user.
+  Edit User: Navigates to Edit User View to edit the selected user.
+  Delete User: Deletes selected user.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+The components are designed to be reusable and follow modern React practices using hooks and functional components.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Additional Notes
+The project uses Vite for fast development and building.
+Tailwind CSS is used for utility-first styling, and SASS is used for additional custom styles.
+State management is handled using Redux Toolkit for a simplified approach to managing global state.
+Routing is handled using React Router.
+
+
+
