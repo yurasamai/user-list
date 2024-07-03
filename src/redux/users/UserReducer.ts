@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'; 
 import { User } from '@/types/users/UserTypes'; 
 import { RootState } from '@/redux/store';
-import { fetchUsers, createUser } from '@/services/users/UserListServices';
+import { fetchUsers, createUser, fetchUsersById } from '@/services/users/UserListServices';
 
  export interface UserList {
     users: User[];
@@ -20,6 +20,16 @@ export const fetchUsersAsync = createAsyncThunk(
     'users/fetchUsers',
     async () => {
        const response = await fetchUsers(); 
+          
+       return response;
+    }
+  );
+
+  //Fetch user by id 
+  export const fetchUserByIdAsync = createAsyncThunk(
+    'users/fetchUsersById',
+    async (id: string) => {
+       const response = await fetchUsersById(id); 
           
        return response;
     }
