@@ -16,7 +16,6 @@ const UserListView: React.FC = () => {
     setDeleteId(id)
     setDeleteName(name)
     setOpenDeleteModal(true)
-    console.log('open delete')
   }
 
   return (

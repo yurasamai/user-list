@@ -94,7 +94,7 @@ export const userSlice = createSlice({
       state.users.push(action.payload);
     });
 
-    // deleteUserAsync reducers
+    // deleteUser reducers
     builder.addCase(deleteUserAsync.fulfilled, (state, action: PayloadAction<string>) => {
       state.users = state.users.filter(user => user.id !== action.payload);
     });

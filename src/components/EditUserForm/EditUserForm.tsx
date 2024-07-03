@@ -130,7 +130,7 @@ const EditUserForm: React.FC<EditFormProps> = ({ userId }) => {
                                 value={status}
                                 onChange={(e) => setStatus(e.target.value as Status)}
                                 className={`mt-1 block w-full px-3 py-2 border ${errors.status ? 'border-red-500' : 'border-gray-300'
-                                    } rounded-md shadow-sm focus:outline-none text-primary-dark bg-white focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+                                    } rounded-md shadow-sm focus:outline-none text-primary-dark bg-white focus:ring-primary-dark focus:border-white sm:text-sm`}
                             >
                                 <option value="">Selecciona...</option>
                                 <option value={Status.Active}>Active</option>
@@ -142,7 +142,7 @@ const EditUserForm: React.FC<EditFormProps> = ({ userId }) => {
                             <button
                                 type="button"
                                 onClick={handleEdit}
-                                className="bg-primary-blue text-white px-4 py-2 rounded-md hover:bg-light-blue focus:outline-none focus:bg-blue-600"
+                                className="bg-light-blue text-white px-4 py-2 rounded-md hover:bg-primary-blue focus:outline-none focus:bg-primary-blue"
                             >
                                 Guardar
                             </button>

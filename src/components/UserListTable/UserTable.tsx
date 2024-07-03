@@ -18,23 +18,26 @@ const UserTable: React.FC<UserTableProps> = ({  onDelete }) => {
     
 
   return (
-    <table className="rounded-sm text-left  border-separate border-tools-table-outline border-transparent w-full">
+    <div className="custom-box w-full overflow-x-auto">
+      <table className="rounded-sm text-left  border-separate border-tools-table-outline border-transparent w-full">
       <thead className="">
-        <tr className="border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto md:relative">
-          <th className="rounded-tl-sm bg-gray-200 p-2 text-gray-600 font-bold md:border md:border-grey-500 text-left block md:table-cell">Id</th>
-          <th className="bg-gray-200 p-2 text-gray-600 font-bold md:border md:border-grey-500 text-left block md:table-cell">Nombre</th>
-          <th className="bg-gray-200 p-2 text-gray-600 font-bold md:border md:border-grey-500 text-left block md:table-cell">Email</th>
-          <th className="bg-gray-200 p-2 text-gray-600 font-bold md:border md:border-grey-500 text-left block md:table-cell">Genero</th>
-          <th className="bg-gray-200 p-2 text-gray-600 font-bold md:border md:border-grey-500 text-left block md:table-cell">Estatus</th>
-          <th className="rounded-tl-sm bg-gray-200 p-2 text-gray-600 font-bold md:border md:border-grey-500 text-left block md:table-cell">Acciones</th>
+        <tr className="border border-grey-500 border-none table-row  top-auto left-auto relative">
+          <th className=" bg-gray-200 p-2 text-gray-600 font-bold border border-grey-500 text-left table-cell">Id</th>
+          <th className="bg-gray-200 p-2 text-gray-600 font-bold border border-grey-500 text-left table-cell">Nombre</th>
+          <th className="bg-gray-200 p-2 text-gray-600 font-bold border border-grey-500 text-left table-cell">Email</th>
+          <th className="bg-gray-200 p-2 text-gray-600 font-bold border border-grey-500 text-left table-cell">Genero</th>
+          <th className="bg-gray-200 p-2 text-gray-600 font-bold border border-grey-500 text-left table-cell">Estatus</th>
+          <th className=" bg-gray-200 p-2 text-gray-600 font-bold border border-grey-500 text-left table-cell">Acciones</th>
         </tr>
       </thead>
-      <tbody className="block md:table-row-group rounded-b-sm">
+      <tbody className=" table-row-group rounded-b-sm">
         {users.map(user => (
           <UserTableRow key={user.id} user={user} onDelete={onDelete} />
         ))}
       </tbody>
     </table>
+    </div>
+    
   );
 };
 

@@ -27,15 +27,15 @@ const UserTableRow: React.FC<UserTableRowProps> = ({ user, onDelete }) => {
 
 
   return (
-    <tr className="bg-white border border-grey-500 md:border-none block md:table-row">
-      <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell text-primary-dark">{user.id}</td>
-      <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell text-primary-dark">{user.name}</td>
-      <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell text-primary-dark">{user.email}</td>
-      <td className="p-2 md:border md:border-grey-500 text-left block md:table-cell text-primary-dark">{user.gender}</td>
-      <td className={`p-2 md:border md:border-grey-500 text-left block md:table-cell font-bold ${user.status === 'active' ? 'text-success' : 'text-error'}`}>
+    <tr className="bg-white border border-grey-500 border-none  table-row">
+      <td className="p-2 border border-grey-500 text-left table-cell text-primary-dark">{user.id}</td>
+      <td className="p-2 border border-grey-500 text-left table-cell text-primary-dark">{user.name}</td>
+      <td className="p-2 border border-grey-500 text-left table-cell text-primary-dark">{user.email}</td>
+      <td className="p-2 border border-grey-500 text-left table-cell text-primary-dark">{user.gender}</td>
+      <td className={`p-2 border border-grey-500 text-left table-cell font-bold ${user.status === 'active' ? 'text-success' : 'text-error'}`}>
       {user.status} 
       </td>
-      <td className="p-2 md:border  md:border-grey-500 text-left block md:table-cell">
+      <td className="p-2 border  border-grey-500 text-left table-cell">
         <div className="flex justify-between items-center cursor-pointer ">
           <div className='relative group'>
             <a href="#" className="text-light-blue hover:text-primary-blue" onClick={handleUserDetail}>
@@ -59,7 +59,7 @@ const UserTableRow: React.FC<UserTableRowProps> = ({ user, onDelete }) => {
             <a href="#" className="text-light-blue hover:text-primary-blue" onClick={handleDelete}>
               <DeleteOutlineOutlinedIcon />
             </a>
-            <span className="absolute left-0 bottom-full ml-2 px-2 py-1 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+            <span className="absolute right-0 bottom-full  px-2 py-1 text-xs text-white bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
               Borrar
             </span>
           </div>
