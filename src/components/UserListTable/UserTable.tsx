@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '@/redux/store';
-import { useFetchUsers } from './utils';
+import { UseFetchUsers } from './utils';
 import UserTableRow from '../UserTableRow';
 import './styles.scss';
 
@@ -11,8 +11,7 @@ const UserTable: React.FC = () => {
     const users = useAppSelector(state => state.user.users);
   
     useEffect(() => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      useFetchUsers(dispatch);
+      UseFetchUsers(dispatch);
     }, [dispatch]);
     
 

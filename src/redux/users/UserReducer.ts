@@ -1,68 +1,84 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'; 
-import { User } from '@/types/users/UserTypes'; 
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { User } from '@/types/users/UserTypes';
 import { RootState } from '@/redux/store';
-import { fetchUsers, createUser, fetchUsersById } from '@/services/users/UserListServices';
+import { fetchUsers, createUser, fetchUsersById, editUser } from '@/services/users/UserListServices';
 
- export interface UserList {
-    users: User[];
-    loading: boolean;
-    error: string | null;
-  }
+export interface UserList {
+  users: User[];
+  loading: boolean;
+  error: string | null;
+}
 
-  const initialState: UserList = {
-    users: [],
-    loading: false,
-    error: null,
-  };
+export interface EditUserParams {
+  userId: string
+  updatedUser: User
+}
 
-  // Fetch users from API 
+const initialState: UserList = {
+  users: [],
+  loading: false,
+  error: null,
+};
+
+// Fetch users from API 
 export const fetchUsersAsync = createAsyncThunk(
-    'users/fetchUsers',
-    async () => {
-       const response = await fetchUsers(); 
-          
-       return response;
-    }
-  );
+  'users/fetchUsers',
+  async () => {
+    const response = await fetchUsers();
 
-  //Fetch user by id 
-  export const fetchUserByIdAsync = createAsyncThunk(
-    'users/fetchUsersById',
-    async (id: string) => {
-       const response = await fetchUsersById(id); 
-          
-       return response;
-    }
-  );
+    return response;
+  }
+);
 
-  // Create user
+//Fetch user by id 
+export const fetchUserByIdAsync = createAsyncThunk(
+  'users/fetchUsersById',
+  async (id: string) => {
+    const response = await fetchUsersById(id);
+
+    return response;
+  }
+);
+
+// Create user
 export const createUserAsync = createAsyncThunk(
   'users/createUser',
   async (newUser: User) => {
-     const response = await createUser(newUser); 
-     return response; 
+    const response = await createUser(newUser);
+    return response;
   }
 );
-  // Slice
+
+// Edit user
+export const editUserAsync = createAsyncThunk(
+  'users/editUser',
+  async (params: EditUserParams) => {
+    const { userId, updatedUser } = params
+    await editUser(userId, updatedUser);
+    return userId;
+  }
+);
+
+// Slice
 export const userSlice = createSlice({
-    name: 'users',
-    initialState,
-    reducers: {},
-    extraReducers: (builder) => {
+  name: 'users',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
     // fetchUsers reducers
     builder.addCase(fetchUsersAsync.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      });
-      builder.addCase(fetchUsersAsync.fulfilled, (state, action: PayloadAction<User[]>) => {
-        state.loading = false;
-        state.users = action.payload;
-      });
-      builder.addCase(fetchUsersAsync.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message || 'Error fetching users';
-      });
-    },
+      state.loading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchUsersAsync.fulfilled, (state, action: PayloadAction<User[]>) => {
+      state.loading = false;
+      state.users = action.payload;
+    });
+    builder.addCase(fetchUsersAsync.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message || 'Error fetching users';
+    });
+  },
 });
 
 // Excport actions and reducers

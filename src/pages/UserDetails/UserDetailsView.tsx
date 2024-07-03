@@ -11,7 +11,7 @@ const UserDetailsView: React.FC = () => {
   return (
     <div className="h-screen bg-[#ebedf4]">
       <HeaderComponent title={`Detalle de usuario: ${userId}`} showHomeButton={true} />
-      <div className='max-w-[1000px] w-full md:w-[90vw] md:w-auto mx-auto p-8'>
+      <div className='max-w-[1000px] w-full md:w-[90vw] mx-auto p-8'>
         {userId && <UserDetailsTable userId={userId}/> }
       </div>
     </div>

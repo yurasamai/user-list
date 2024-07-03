@@ -13,7 +13,6 @@ const UserDetailsTable: React.FC<UserDetailsTableProps> = ({ userId }) => {
 
     useEffect(() => {
         const fetchUser = async () => {
-            // eslint-disable-next-line react-hooks/rules-of-hooks
             const response = await UseGetUserById(dispatch, userId);
             console.log(response?.payload)
             

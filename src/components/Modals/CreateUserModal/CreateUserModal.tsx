@@ -42,7 +42,6 @@ const CreateUserModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     }
     if (Object.keys(errors).length === 0) {
       // Perform saving user
-      console.log('Guardando datos:', { name, email, gender });
       const userObj={
         name,
         email,
