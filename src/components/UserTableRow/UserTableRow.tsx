@@ -14,7 +14,7 @@ const UserTableRow: React.FC<UserTableRowProps> = ({ user }) => {
   const navigate = useNavigate();
 
   const handleUserDetail = () => {
-    // navigate(`/user/${user.id}`);
+    navigate(`/usuario/${user.id}`);
   };
   const handleEdit = () => {
     // navigate(`/edit/${user.id}`);

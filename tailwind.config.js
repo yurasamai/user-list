@@ -10,6 +10,7 @@ export default {
         'primary-dark': '#1b2127',
         'primary-blue': '#3853b3',
         'light-blue': '#4f6bce',
+        'light-sky-blue': '#e1e9fc',
         'success':'#4fce7e',
         'error': '#e85858'
       },
