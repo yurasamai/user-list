@@ -10,14 +10,13 @@ interface UserTableRowProps {
 
 const UserTableRow: React.FC<UserTableRowProps> = ({ user }) => {
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const navigate = useNavigate();
 
   const handleUserDetail = () => {
     navigate(`/usuario/${user.id}`);
   };
   const handleEdit = () => {
-    // navigate(`/edit/${user.id}`);
+    navigate(`/editar/${user.id}`);
   }
 
   const handleDelete = () => {
