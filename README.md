@@ -2,7 +2,7 @@ User List Application
 
 This is a User List application built with modern web development technologies. It provides a list of users with options to crate, view, edit, and delete user information.
 
-Table of Contents
+Table of Contents:
   -Technologies Used
   -Getting Started
   -Usage
