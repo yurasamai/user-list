@@ -6,9 +6,10 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 interface UserTableRowProps {
   user: User;
+  onDelete: (id: string, name:string) => void;
 }
 
-const UserTableRow: React.FC<UserTableRowProps> = ({ user }) => {
+const UserTableRow: React.FC<UserTableRowProps> = ({ user, onDelete }) => {
 
   const navigate = useNavigate();
 
@@ -20,7 +21,8 @@ const UserTableRow: React.FC<UserTableRowProps> = ({ user }) => {
   }
 
   const handleDelete = () => {
-    console.log("eliminar usuario: ", user.id)
+    if(user.id)
+    onDelete(user.id, user.name)
   }
 
 

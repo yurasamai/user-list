@@ -41,3 +41,13 @@ export const editUser = async (userId: string, updatedUser: User): Promise<User>
     throw new Error(`Error on: Edit user: ${error.message}`);
   }
 };
+
+// Delete user
+
+export const deleteUser = async (userId: string): Promise<void> => {
+  try {
+    await UserListApiGateWay.delete(`/public/v2/users/${userId}`);
+  } catch (error: any) {
+    throw new Error(`Error on: Delete user ${userId}: ${error.message}`);
+  }
+};

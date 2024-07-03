@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { User } from '@/types/users/UserTypes';
 import { RootState } from '@/redux/store';
-import { fetchUsers, createUser, fetchUsersById, editUser } from '@/services/users/UserListServices';
+import { fetchUsers, createUser, fetchUsersById, editUser, deleteUser } from '@/services/users/UserListServices';
 
 export interface UserList {
   users: User[];
@@ -59,6 +59,16 @@ export const editUserAsync = createAsyncThunk(
   }
 );
 
+
+// Delete user
+export const deleteUserAsync = createAsyncThunk(
+  'users/deleteUser',
+  async (userId: string) => {
+    await deleteUser(userId); 
+    return userId; 
+  }
+);
+
 // Slice
 export const userSlice = createSlice({
   name: 'users',
@@ -77,6 +87,16 @@ export const userSlice = createSlice({
     builder.addCase(fetchUsersAsync.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message || 'Error fetching users';
+    });
+
+    // createUser reducers
+    builder.addCase(createUserAsync.fulfilled, (state, action: PayloadAction<User>) => {
+      state.users.push(action.payload);
+    });
+
+    // deleteUserAsync reducers
+    builder.addCase(deleteUserAsync.fulfilled, (state, action: PayloadAction<string>) => {
+      state.users = state.users.filter(user => user.id !== action.payload);
     });
   },
 });

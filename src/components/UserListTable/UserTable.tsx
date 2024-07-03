@@ -3,9 +3,11 @@ import { useAppSelector, useAppDispatch } from '@/redux/store';
 import { UseFetchUsers } from './utils';
 import UserTableRow from '../UserTableRow';
 import './styles.scss';
+interface UserTableProps {
+  onDelete: (id: string, name:string) => void;
+}
 
-
-const UserTable: React.FC = () => {
+const UserTable: React.FC<UserTableProps> = ({  onDelete }) => {
 
     const dispatch = useAppDispatch();
     const users = useAppSelector(state => state.user.users);
@@ -29,7 +31,7 @@ const UserTable: React.FC = () => {
       </thead>
       <tbody className="block md:table-row-group rounded-b-sm">
         {users.map(user => (
-          <UserTableRow key={user.id} user={user} />
+          <UserTableRow key={user.id} user={user} onDelete={onDelete} />
         ))}
       </tbody>
     </table>
