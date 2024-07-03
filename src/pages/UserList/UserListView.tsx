@@ -10,9 +10,7 @@ const UserListView: React.FC = () => {
     <div className="h-screen bg-[#ebedf4]">
       <HeaderComponent title={"Lista de usuarios"} showHomeButton={false} />
       <div className='w-full p-8'>
-        <CreateUserButton onCreateUser={()=>{
-          console.log('on create')
-          setOpenModal(!openModal)}}/>
+        <CreateUserButton onCreateUser={()=>{setOpenModal(!openModal)}}/>
         <UserTable />
         <CreateUserModal isOpen={openModal} onClose={()=>{setOpenModal(false)}}/>
       </div>
